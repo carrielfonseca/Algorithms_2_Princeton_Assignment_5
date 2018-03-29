@@ -43,10 +43,7 @@ public class CircularSuffixArray {
 	}
 	
 	private class CircularSuffix {
-//		private String s = this.s;
-//		private int length2 = length;   //index of the original String of the outer class
-		private int index=7; // temporary for testing 
-		
+		private int index=7; // temporary for testing		
 		//character in the ith position of the suffix
 		private char charAt(int i) {
 			return s.charAt((index+i) % length); // a bit tricky
