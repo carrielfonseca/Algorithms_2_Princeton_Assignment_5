@@ -49,12 +49,7 @@ public class CircularSuffixArray {
 		
 		//character in the ith position of the suffix
 		private char charAt(int i) {
-			if ((index+i) <= (length-1)) {
-				return s.charAt(index+i);
-			}
-			else {
-				return s.charAt((index+i) % length); // a bit tricky
-			}
+			return s.charAt((index+i) % length); // a bit tricky
 		}
 	}
 	
