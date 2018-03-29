@@ -27,7 +27,7 @@ public class CircularSuffixArray {
 	
 	// circular suffix array of s
 	public CircularSuffixArray(String s) {
-		s = s;
+		this.s = s;
 		length = s.length();
 		 
 	 }
@@ -43,9 +43,9 @@ public class CircularSuffixArray {
 	}
 	
 	private class CircularSuffix {
-		private String s = this.s;
-		private int length2 = length;   //index of the original String of the outer class
-		private int index=1; // temporary for testing 
+//		private String s = this.s;
+//		private int length2 = length;   //index of the original String of the outer class
+		private int index=7; // temporary for testing 
 		
 		//character in the ith position of the suffix
 		private char charAt(int i) {
@@ -65,7 +65,8 @@ public class CircularSuffixArray {
 		
 		CircularSuffix csinner = cs.new CircularSuffix();
 		
-		System.out.println(csinner.length2);
+		System.out.println(cs.s);
+		System.out.println(csinner.charAt(10));
 
 	}
 
