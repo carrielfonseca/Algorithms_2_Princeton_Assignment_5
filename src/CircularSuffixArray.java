@@ -1,4 +1,4 @@
-
+import java.util.Comparator;
 
 /**
  * 
@@ -42,11 +42,25 @@ public class CircularSuffixArray {
 		return 0;
 	}
 	
-	private class CircularSuffix {
-		private int index=7; // temporary for testing		
+	private class CircularSuffix implements Comparable<CircularSuffix> {
+		private int index=7; // temporary for testing
 		//character in the ith position of the suffix
 		private char charAt(int i) {
 			return s.charAt((index+i) % length); // a bit tricky
+		}
+		
+		public int compareTo(CircularSuffix cs1) {
+			int i = 0;
+			while (i < length) {
+				if (cs1.charAt(i) < this.charAt(i)) {
+					return -1;
+				}
+				else if (cs1.charAt(i) < this.charAt(i)) {
+					return 1;
+				}
+				i++;
+			}
+			return 0; //TODO: make on return
 		}
 	}
 	
@@ -58,7 +72,7 @@ public class CircularSuffixArray {
 		CircularSuffix csinner = cs.new CircularSuffix();
 		
 		System.out.println(cs.s);
-		System.out.println(csinner.charAt(10));
+//		System.out.println(csinner.charAt(10));
 
 	}
 
