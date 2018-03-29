@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Comparator;
 
 /**
@@ -22,14 +23,19 @@ import java.util.Comparator;
 public class CircularSuffixArray {
 	
 	private String s;
-	private int length; 
+	private int length;
+	private CircularSuffix[] cs;
 	
 	
 	// circular suffix array of s
 	public CircularSuffixArray(String s) {
 		this.s = s;
 		length = s.length();
-		 
+		cs = new CircularSuffix[length];
+		for(int i=0;i<length;i++) {
+			cs[i] = new CircularSuffix(i);
+		}
+		Arrays.sort(cs);
 	 }
 	
 	// length of s
