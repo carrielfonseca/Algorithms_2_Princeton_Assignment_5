@@ -81,6 +81,7 @@ public class CircularSuffixArray {
 	
 	public static void main(String[] args) {
 		CircularSuffixArray csa = new CircularSuffixArray("ABRACADABRA");		
+		System.out.println(csa.index(0));	
 		
 		for(int j = 0; j < csa.length; j++) {
 			for(int i = 0; i < csa.length; i++) {
