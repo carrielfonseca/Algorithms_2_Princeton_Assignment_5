@@ -45,11 +45,15 @@ public class CircularSuffixArray {
 	
 	// returns index of ith sorted suffix
 	public int index(int i) {
-		return 0;
+		return cs[i].getIndex();
 	}
 	
 	private class CircularSuffix implements Comparable<CircularSuffix> {
 		private int index; // temporary for testing
+		
+		public int getIndex() {
+			return index;
+		}
 		
 		public CircularSuffix(int index) {
 			this.index = index;
@@ -76,14 +80,14 @@ public class CircularSuffixArray {
 	}
 	
 	public static void main(String[] args) {
-//		System.out.println(11%11);
-		CircularSuffixArray cs = new CircularSuffixArray("ABRACADABRA");
-//		System.out.println(cs.length);
+		CircularSuffixArray csa = new CircularSuffixArray("ABRACADABRA");		
 		
-		CircularSuffix csinner = cs.new CircularSuffix(0);
-		CircularSuffix csinner2 = cs.new CircularSuffix(1);		
-		
-		System.out.println(csinner2.compareTo(csinner));
+		for(int j = 0; j < csa.length; j++) {
+			for(int i = 0; i < csa.length; i++) {
+				System.out.print(csa.cs[j].charAt(i));
+			}
+			System.out.print('\n');			
+		}
 
 	}
 
