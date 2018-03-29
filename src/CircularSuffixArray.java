@@ -27,6 +27,8 @@ public class CircularSuffixArray {
 	
 	// circular suffix array of s
 	public CircularSuffixArray(String s) {
+		s = s;
+		length = s.length();
 		 
 	 }
 	
@@ -42,7 +44,7 @@ public class CircularSuffixArray {
 	
 	private class CircularSuffix {
 		private String s = this.s;
-		private int length= this.length;   //index of the original String of the outer class
+		private int length2 = length;   //index of the original String of the outer class
 		private int index=1; // temporary for testing 
 		
 		//character in the ith position of the suffix
@@ -57,8 +59,13 @@ public class CircularSuffixArray {
 	}
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println(7%11);
+		System.out.println(11%11);
+		CircularSuffixArray cs = new CircularSuffixArray("ABRACADABRA");
+		System.out.println(cs.length);
+		
+		CircularSuffix csinner = cs.new CircularSuffix();
+		
+		System.out.println(csinner.length2);
 
 	}
 
