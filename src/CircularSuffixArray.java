@@ -43,19 +43,24 @@ public class CircularSuffixArray {
 	}
 	
 	private class CircularSuffix implements Comparable<CircularSuffix> {
-		private int index=7; // temporary for testing
+		private int index; // temporary for testing
+		
+		public CircularSuffix(int index) {
+			this.index = index;
+		}
+		
 		//character in the ith position of the suffix
-		private char charAt(int i) {
+		public char charAt(int i) {
 			return s.charAt((index+i) % length); // a bit tricky
 		}
 		
-		public int compareTo(CircularSuffix cs1) {
+		public int compareTo(CircularSuffix cs) {
 			int i = 0;
 			while (i < length) {
-				if (cs1.charAt(i) < this.charAt(i)) {
+				if (this.charAt(i) < cs.charAt(i)) {
 					return -1;
 				}
-				else if (cs1.charAt(i) < this.charAt(i)) {
+				else if (this.charAt(i) > cs.charAt(i)) {
 					return 1;
 				}
 				i++;
@@ -65,14 +70,14 @@ public class CircularSuffixArray {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(11%11);
+//		System.out.println(11%11);
 		CircularSuffixArray cs = new CircularSuffixArray("ABRACADABRA");
-		System.out.println(cs.length);
+//		System.out.println(cs.length);
 		
-		CircularSuffix csinner = cs.new CircularSuffix();
+		CircularSuffix csinner = cs.new CircularSuffix(0);
+		CircularSuffix csinner2 = cs.new CircularSuffix(1);		
 		
-		System.out.println(cs.s);
-//		System.out.println(csinner.charAt(10));
+		System.out.println(csinner2.compareTo(csinner));
 
 	}
 
