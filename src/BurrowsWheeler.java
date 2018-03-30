@@ -7,14 +7,23 @@ public class BurrowsWheeler {
 	
 	// apply Burrows-Wheeler transform, reading from standard input and writing to standard output
     public static void transform() {    	
-//    	String s = StdIn.readString(); // can use this for QA
+//    	String s = StdIn.readString(); // can use this for QA    	
+    	int first = 0;
     	String s = BinaryStdIn.readString();
     	char[] t = new char[s.length()];
     	CircularSuffixArray cs = new CircularSuffixArray(s);
     	for (int i = 0; i < s.length(); i++) {
     		t[i] = lastCharInCircularSuffix(s, cs.index(i));
-    		BinaryStdOut.write(t[i]);
+    		if (cs.index(i) == 0) {
+    			first = i;
+    		}    		
     	}
+    	// prints out the transform
+    	BinaryStdOut.write(first);
+    	for (int i = 0; i < s.length(); i++) {
+    		BinaryStdOut.write(t[i]);    		  		
+    	} 
+    	
     	BinaryStdOut.close();
     }
     
