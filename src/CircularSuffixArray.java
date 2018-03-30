@@ -43,7 +43,7 @@ public class CircularSuffixArray {
 		return s.length();
 	}
 	
-	// returns index of ith sorted suffix
+	// returns index of ith sorted suffix, which will be first letter of the given suffix
 	public int index(int i) {
 		return cs[i].getIndex();
 	}
