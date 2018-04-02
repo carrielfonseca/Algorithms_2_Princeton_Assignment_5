@@ -42,14 +42,15 @@ public class BurrowsWheeler {
     	char[] firstLetters = s.toCharArray();
     	Arrays.sort(firstLetters);
     	BinaryStdOut.write(firstLetters[0]);
+    	BinaryStdOut.close();
     	
     }
 
     // if args[0] is '-', apply Burrows-Wheeler transform
     // if args[0] is '+', apply Burrows-Wheeler inverse transform
     public static void main(String[] args) {
-    	if (args[0] == "-") transform();
-    	else if (args[0] == "+") inverseTransform();
+    	if (args[0].equals("-")) transform();
+    	else if (args[0].equals("+")) inverseTransform();
 //    	char c = lastCharInCircularSuffix("ABRACADABRA",3);
 //    	System.out.println(c);
     }
