@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 import edu.princeton.cs.algs4.BinaryStdIn;
 import edu.princeton.cs.algs4.BinaryStdOut;
 
@@ -33,7 +35,14 @@ public class BurrowsWheeler {
     }
 
     // apply Burrows-Wheeler inverse transform, reading from standard input and writing to standard output
-//    public static void inverseTransform()
+    public static void inverseTransform() {
+    	int first = BinaryStdIn.readInt();  //first suffix when in sorted order 
+    	String s = BinaryStdIn.readString();
+    	char[] t = s.toCharArray();
+    	char[] firstLetters = s.toCharArray();
+    	Arrays.sort(firstLetters);
+    	
+    }
 
     // if args[0] is '-', apply Burrows-Wheeler transform
     // if args[0] is '+', apply Burrows-Wheeler inverse transform
