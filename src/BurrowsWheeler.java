@@ -63,18 +63,8 @@ public class BurrowsWheeler {
     	}
     	
     	
-    	BinaryStdOut.write(firstLetters[0]);
-    	BinaryStdOut.write(firstLetters[1]);
-    	BinaryStdOut.write(firstLetters[2]);
-    	BinaryStdOut.write(firstLetters[3]);
-    	BinaryStdOut.write(firstLetters[4]);
-    	BinaryStdOut.write(firstLetters[5]);
-    	BinaryStdOut.write(firstLetters[6]);
-    	BinaryStdOut.write(firstLetters[7]);
-    	BinaryStdOut.write(firstLetters[8]);
-    	BinaryStdOut.write(firstLetters[9]);
-    	BinaryStdOut.write(firstLetters[10]);
-    	BinaryStdOut.write(firstLetters[11]);
+    	BinaryStdOut.write(next[0]);
+    	
     	BinaryStdOut.close();
     	
     }
