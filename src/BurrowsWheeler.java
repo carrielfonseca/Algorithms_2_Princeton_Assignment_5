@@ -36,9 +36,11 @@ public class BurrowsWheeler {
 
     // apply Burrows-Wheeler inverse transform, reading from standard input and writing to standard output
     public static void inverseTransform() {
-    	int first = BinaryStdIn.readInt();  //first suffix when in sorted order 
+    	int first = BinaryStdIn.readInt();  //first suffix when in sorted order
+    	
     	int[] count = new int[257];   //TODO replace by constant variable in class
     	String s = BinaryStdIn.readString();
+    	int[] next = new int[s.length()];
     	char[] t = s.toCharArray();
     	char[] firstLetters = s.toCharArray();
     	Arrays.sort(firstLetters);
@@ -52,6 +54,14 @@ public class BurrowsWheeler {
     	for (int r = 0; r < count.length-1; r++) {
     		count[r+1] = count[r] + count[r+1];   
     	}
+    	int counter = 0;
+    	int nextSuffix = first;
+    	while (counter < s.length()) {
+    		next[count[t[nextSuffix]]++] = nextSuffix;
+    		nextSuffix = count[t[nextSuffix]];
+    		counter++;
+    	}
+    	
     	
     	BinaryStdOut.write(firstLetters[0]);
     	BinaryStdOut.write(firstLetters[1]);
