@@ -60,18 +60,16 @@ public class BurrowsWheeler {
     	
     	int counter = 0;
     	while (counter < s.length()) {
-    		
-    		BinaryStdOut.write(count[t[counter]]);
-    		BinaryStdOut.flush();
-    		next[counter] = count[t[counter]];
-    		count[t[counter]] = count[t[counter]]+1;
-    		
+     		next[count[t[counter]]] = counter; 
+    		count[t[counter]] = count[t[counter]]+1;    		
     		counter++;
     	}
 //    	
-//    	BinaryStdOut.write(next[0]);
-//    	BinaryStdOut.write(next[1]);
-//    	BinaryStdOut.write(next[2]);
+    	BinaryStdOut.write(next[0]);
+    	BinaryStdOut.write(next[1]);
+    	BinaryStdOut.write(next[2]);
+    	BinaryStdOut.write(next[3]);
+    	BinaryStdOut.write(next[4]);
            	
     	BinaryStdOut.close();
     	
