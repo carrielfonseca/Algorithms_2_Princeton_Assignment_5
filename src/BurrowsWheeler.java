@@ -48,22 +48,31 @@ public class BurrowsWheeler {
     	//counts the number of each character in the String input
     	for (int i = 0; i < s.length(); i++) {
     		count[t[i] + 1] = count[t[i] + 1] + 1; 
-    	}
+    	}   	
+    	
+    	
     	// does the cumulates of the count arrays. This will provided the indices 
     	// of the first appearance of each character  
     	for (int r = 0; r < count.length-1; r++) {
     		count[r+1] = count[r] + count[r+1];   
     	}
+    	
+//    	BinaryStdOut.write(count['A'+1]);
+//    	BinaryStdOut.write(count['B' +1]);
+//    	BinaryStdOut.write(count['!'] +1);//    	
+    	
+    	BinaryStdOut.write(count[t[3]]);
     	int counter = 0;
     	int nextSuffix = first;
     	while (counter < s.length()) {
-    		next[count[t[nextSuffix]]++] = nextSuffix;
-    		nextSuffix = count[t[nextSuffix]];
+    		int row = count[t[nextSuffix]];   		
+    		next[row] = nextSuffix;
+    		nextSuffix = row;
+    		count[row] = count[row]+1;    		
     		counter++;
     	}
+    	BinaryStdOut.write(count['!']);
     	
-    	
-    	BinaryStdOut.write(next[0]);
     	
     	BinaryStdOut.close();
     	
