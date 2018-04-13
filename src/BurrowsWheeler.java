@@ -43,7 +43,6 @@ public class BurrowsWheeler {
     	int[] next = new int[s.length()];
     	char[] t = s.toCharArray();
     	char[] firstLetters = s.toCharArray();
-    	Arrays.sort(firstLetters);
     	
     	//counts the number of each character in the String input
     	for (int i = 0; i < s.length(); i++) {
@@ -58,8 +57,10 @@ public class BurrowsWheeler {
     	
     	int counter = 0;
     	while (counter < s.length()) {
-     		next[count[t[counter]]] = counter; 
-    		count[t[counter]] = count[t[counter]]+1;    		
+     		next[count[t[counter]]] = counter;
+     		firstLetters[count[t[counter]]] = t[counter]; //the characters found in t[counter] is put where it should be placed in alphabetical order
+    		count[t[counter]] = count[t[counter]]+1; //updates the index of the char in the count array
+    		
     		counter++;
     	}           	
     	BinaryStdOut.close();    	
