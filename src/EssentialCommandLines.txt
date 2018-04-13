@@ -1,0 +1,8 @@
+//compile BurrowsWheeler.java
+javac-algs4 BurrowsWheeler.java
+
+//commpresses, and prints the BinaryOutput as Hexadecimal characters
+java-algs4 BurrowsWheeler - < abra.txt | java-algs4 edu.princeton.cs.algs4.HexDump 16
+
+//commpresses, decompresses and prints the BinaryOutput as Hexadecimal characters
+java-algs4 BurrowsWheeler - < abra.txt | java-algs4 BurrowsWheeler + | java-algs4 edu.princeton.cs.algs4.HexDump 16
