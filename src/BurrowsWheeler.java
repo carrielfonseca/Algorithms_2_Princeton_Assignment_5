@@ -59,16 +59,17 @@ public class BurrowsWheeler {
     	while (counter < s.length()) {
      		next[count[t[counter]]] = counter;
      		firstLetters[count[t[counter]]] = t[counter]; //the characters found in t[counter] is put where it should be placed in alphabetical order
-    		count[t[counter]] = count[t[counter]]+1; //updates the index of the char in the count array
-    		
+    		count[t[counter]] = count[t[counter]]+1; //updates the index of the char in the count array    		
     		counter++;
     	}
     	
-    	BinaryStdOut.write(firstLetters[0]);
-    	BinaryStdOut.write(firstLetters[1]);
-    	BinaryStdOut.write(firstLetters[2]);
-    	BinaryStdOut.write(firstLetters[3]);
-    	BinaryStdOut.write(firstLetters[4]);
+    	//finally reconstructs the original message
+    	int nextCharToVisit = first;
+    	for(int i = 0; i < s.length(); i++) {
+    		BinaryStdOut.write(firstLetters[nextCharToVisit]);
+    		nextCharToVisit = next[nextCharToVisit];
+    	} 	
+
     	BinaryStdOut.close();    	
     }
 
