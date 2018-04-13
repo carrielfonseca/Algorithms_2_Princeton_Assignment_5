@@ -62,7 +62,13 @@ public class BurrowsWheeler {
     		count[t[counter]] = count[t[counter]]+1; //updates the index of the char in the count array
     		
     		counter++;
-    	}           	
+    	}
+    	
+    	BinaryStdOut.write(firstLetters[0]);
+    	BinaryStdOut.write(firstLetters[1]);
+    	BinaryStdOut.write(firstLetters[2]);
+    	BinaryStdOut.write(firstLetters[3]);
+    	BinaryStdOut.write(firstLetters[4]);
     	BinaryStdOut.close();    	
     }
 
