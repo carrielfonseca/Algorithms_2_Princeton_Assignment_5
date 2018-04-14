@@ -41,9 +41,9 @@ public class MoveToFront {
   	   // gets the input
   	   while (!BinaryStdIn.isEmpty()) {
   		   int out = BinaryStdIn.readInt();
-  		   alphabet.remove(out);
+  		   int last = alphabet.remove(out);
   		   alphabet.addFirst(out);
-  		  BinaryStdOut.write((char) out);
+  		   BinaryStdOut.write((char) last);
   	   }
   	   BinaryStdOut.close();
     }
