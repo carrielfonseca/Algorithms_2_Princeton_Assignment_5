@@ -36,7 +36,7 @@ public class MoveToFront {
   	   }
   	   // gets the input
   	   while (!BinaryStdIn.isEmpty()) {
-  		   int out = BinaryStdIn.readInt();
+  		   char out = BinaryStdIn.readChar();
   		   int last = alphabet.remove(out); //the character retrieved in the alphabet list
   		   alphabet.addFirst(last);
   		   BinaryStdOut.write((char) last); //tricky api. needs to char, otherwise willl print 00 00 00 41 instead of the desired 41
