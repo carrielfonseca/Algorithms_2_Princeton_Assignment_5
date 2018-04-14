@@ -10,7 +10,7 @@ public class MoveToFront {
 	   LinkedList<Integer> alphabet = new LinkedList<>();	   
 	   // initializes alphabet
 	   for(int i = 0; i < 256; i++) {
-		   alphabet.push(i);
+		   alphabet.add(i);
 	   }
 	   // gets the input
 	   String s = BinaryStdIn.readString();
@@ -23,6 +23,7 @@ public class MoveToFront {
 		   alphabet.remove(out);
 		   alphabet.addFirst(lastWrapVersion);
 		   BinaryStdOut.write(out);
+		   BinaryStdOut.close();
  	   }
 	   
 	   
@@ -36,7 +37,8 @@ public class MoveToFront {
     // if args[0] is '+', apply move-to-front decoding
 
 	public static void main(String[] args) {
-	
+		if (args[0].equals("-")) encode();
+//    	else if (args[0].equals("+")) decode();
 
 	}
 
