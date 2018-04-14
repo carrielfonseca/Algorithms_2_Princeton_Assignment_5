@@ -31,7 +31,21 @@ public class MoveToFront {
    }
 
     // apply move-to-front decoding, reading from standard input and writing to standard output
-//    public static void decode()
+    public static void decode() {
+       LinkedList<Integer> alphabet = new LinkedList<>();	   
+  	   // initializes alphabet
+  	   for(int i = 0; i < 256; i++) {
+  		   alphabet.add(i);
+  		 
+  	   }
+  	   // gets the input
+  	   while (!BinaryStdIn.isEmpty()) {
+  		   int out = BinaryStdIn.readInt();
+  		   alphabet.remove(out);
+  		   alphabet.add(out);
+  		  BinaryStdOut.write((char) out);
+  	   }  	   
+    }
 
     // if args[0] is '-', apply move-to-front encoding
     // if args[0] is '+', apply move-to-front decoding
