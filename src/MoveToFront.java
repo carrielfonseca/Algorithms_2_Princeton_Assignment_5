@@ -22,12 +22,9 @@ public class MoveToFront {
 		   int out = alphabet.indexOf(lastWrapVersion);
 		   alphabet.remove(out);
 		   alphabet.addFirst(lastWrapVersion);
-		   BinaryStdOut.write(out);		   
+		   BinaryStdOut.write((char) out);
  	   }
-	   BinaryStdOut.close();
-	   
-	   
-	   
+	   BinaryStdOut.close();   
    }
 
     // apply move-to-front decoding, reading from standard input and writing to standard output
@@ -35,15 +32,14 @@ public class MoveToFront {
        LinkedList<Integer> alphabet = new LinkedList<>();	   
   	   // initializes alphabet
   	   for(int i = 0; i < 256; i++) {
-  		   alphabet.add(i);
-  		 
+  		   alphabet.add(i);  		 
   	   }
   	   // gets the input
   	   while (!BinaryStdIn.isEmpty()) {
   		   int out = BinaryStdIn.readInt();
   		   int last = alphabet.remove(out); //the character retrieved in the alphabet list
   		   alphabet.addFirst(last);
-  		   BinaryStdOut.write((char) last);
+  		   BinaryStdOut.write((char) last); //tricky api. needs to char, otherwise willl print 00 00 00 41 instead of the desired 41
   	   }
   	   BinaryStdOut.close();
     }
