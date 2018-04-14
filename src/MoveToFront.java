@@ -41,8 +41,8 @@ public class MoveToFront {
   	   // gets the input
   	   while (!BinaryStdIn.isEmpty()) {
   		   int out = BinaryStdIn.readInt();
-  		   int last = alphabet.remove(out);
-  		   alphabet.addFirst(out);
+  		   int last = alphabet.remove(out); //the character retrieved in the alphabet list
+  		   alphabet.addFirst(last);
   		   BinaryStdOut.write((char) last);
   	   }
   	   BinaryStdOut.close();
