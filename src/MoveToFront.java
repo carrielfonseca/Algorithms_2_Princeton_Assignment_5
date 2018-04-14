@@ -42,9 +42,10 @@ public class MoveToFront {
   	   while (!BinaryStdIn.isEmpty()) {
   		   int out = BinaryStdIn.readInt();
   		   alphabet.remove(out);
-  		   alphabet.add(out);
+  		   alphabet.addFirst(out);
   		  BinaryStdOut.write((char) out);
-  	   }  	   
+  	   }
+  	   BinaryStdOut.close();
     }
 
     // if args[0] is '-', apply move-to-front encoding
