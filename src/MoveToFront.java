@@ -22,9 +22,9 @@ public class MoveToFront {
 		   int out = alphabet.indexOf(lastWrapVersion);
 		   alphabet.remove(out);
 		   alphabet.addFirst(lastWrapVersion);
-		   BinaryStdOut.write(out);
-		   BinaryStdOut.close();
+		   BinaryStdOut.write(out);		   
  	   }
+	   BinaryStdOut.close();
 	   
 	   
 	   
