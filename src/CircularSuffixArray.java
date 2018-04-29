@@ -46,6 +46,7 @@ public class CircularSuffixArray {
 	
 	// returns index of ith sorted suffix, which will be first letter of the given suffix
 	public int index(int i) {
+		if (i < 0 || i >= length) throw new java.lang.IllegalArgumentException("index out of bounds for circular array");
 		return cs[i].getIndex();
 	}
 	
