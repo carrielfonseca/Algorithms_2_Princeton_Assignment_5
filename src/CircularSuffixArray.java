@@ -29,6 +29,7 @@ public class CircularSuffixArray {
 	
 	// circular suffix array of s
 	public CircularSuffixArray(String s) {
+		if (s==null) throw new java.lang.IllegalArgumentException("Strings cannot be null");
 		this.s = s;
 		length = s.length();
 		cs = new CircularSuffix[length];
