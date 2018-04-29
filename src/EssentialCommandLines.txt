@@ -6,3 +6,7 @@ java-algs4 BurrowsWheeler - < abra.txt | java-algs4 edu.princeton.cs.algs4.HexDu
 
 //commpresses, decompresses and prints the BinaryOutput as Hexadecimal characters
 java-algs4 BurrowsWheeler - < abra.txt | java-algs4 BurrowsWheeler + | java-algs4 edu.princeton.cs.algs4.HexDump 16
+
+
+//MoveToFront contract and expand. Output should be the same as input 
+java-algs4 MoveToFront - < abra.txt | java-algs4 MoveToFront +
